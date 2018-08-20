@@ -54,7 +54,7 @@ public class PersonalDataViewShow extends View{
     }
 
     @Override
-    protected void clear() {
+    public void clear() {
         name.setText(EMPTY_LABEL);
         id.setText(EMPTY_LABEL);
         birthdate.setText(EMPTY_LABEL);

@@ -17,7 +17,5 @@ public class ContactDataController extends Controller {
 
         model.setEmail(bundle.getString(ContactData.EMAIL));
         model.setPhone(bundle.getString(ContactData.PHONE));
-
-        System.out.println(model.getEmail() + model.getPhone());
     }
 }

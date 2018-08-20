@@ -22,5 +22,5 @@ public abstract class View {
         return mainPanel;
     }
 
-    protected abstract void clear();
+    public abstract void clear();
 }

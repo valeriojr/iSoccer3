@@ -54,7 +54,7 @@ public class AddressDataViewEdit extends View {
     }
 
     @Override
-    protected void clear() {
+    public void clear() {
 
     }
 }

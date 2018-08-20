@@ -43,15 +43,8 @@ public class ContactDataViewEdit extends View {
     }
 
     @Override
-    protected void clear() {
+    public void clear() {
         email.setText("");
         phone.setText("");
-    }
-
-    public String getEmail(){
-        return email.getText();
-    }
-    public String getPhone(){
-        return phone.getText();
     }
 }

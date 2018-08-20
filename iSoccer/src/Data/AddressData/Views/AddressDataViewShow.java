@@ -54,7 +54,7 @@ public class AddressDataViewShow extends View {
     }
 
     @Override
-    protected void clear() {
+    public void clear() {
         address.setText("");
         city.setText("");
         state.setText("");

@@ -1,67 +1,46 @@
-import Data.AddressData.AddressData;
-import Data.AddressData.AddressDataController;
-import Data.AddressData.Views.AddressDataViewEdit;
-import Data.AddressData.Views.AddressDataViewShow;
-import Data.ContactData.ContactData;
-import Data.ContactData.ContactDataController;
-import Data.ContactData.Views.ContactDataViewEdit;
-import Data.ContactData.Views.ContactDataViewShow;
+import Data.AddressData.*;
+import Data.AddressData.Views.*;
+import Data.ContactData.*;
+import Data.ContactData.Views.*;
 import Data.Controller;
-import Data.PersonalData.PersonalData;
-import Data.PersonalData.PersonalDataController;
-import Data.PersonalData.Views.PersonalDataViewEdit;
-import Data.PersonalData.Views.PersonalDataViewShow;
+import Data.Model;
+import Data.PersonalData.*;
+import Data.PersonalData.Views.*;
+import Data.View;
+import Person.Person;
+import Person.PersonController;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 
 public class iSoccer {
     static JFrame frame;
 
-    public static void main(String args[]){
+    public static void main(String args[]) {
         initializeFrame();
 
-        Controller personalController = personalTest();
-        Controller addressController = addressTest();
-        Controller contactController = contactTest();
+        PersonController personController = new PersonController(new Person(null, null, null));
+
+        setView(personController);
 
         JButton updateButton = new JButton("Update");
-
         updateButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                personalController.updateView("Edit");
-                personalController.updateModel();
-                System.out.println(personalController.getModel());
-                personalController.updateView("Show");
-
-                addressController.updateView("Show");
-                addressController.updateView("Edit");
-                addressController.updateModel();
-                System.out.println(addressController.getModel());
-                addressController.updateView("Show");
-
-                contactController.updateView("Edit");
-                contactController.updateModel();
-                System.out.println(contactController.getModel());
-                contactController.updateView("Show");
+                for (View v : personController.getViews()) {
+                    v.update();
+                    personController.updateModel();
+                    v.clear();
+                }
+                System.out.print(personController.getModel());
             }
         });
 
-        JPanel buttons = new JPanel();
-        buttons.add(updateButton);
-
-        frame.getContentPane().setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.PAGE_AXIS));
-
-        frame.getContentPane().add(personalController.getView("Edit").getMainPanel(), BorderLayout.NORTH);
-        frame.getContentPane().add(personalController.getView("Show").getMainPanel(), BorderLayout.CENTER);
-        frame.getContentPane().add(addressController.getView("Edit").getMainPanel(), BorderLayout.NORTH);
-        frame.getContentPane().add(addressController.getView("Show").getMainPanel(), BorderLayout.CENTER);
-        frame.getContentPane().add(contactController.getView("Edit").getMainPanel(), BorderLayout.NORTH);
-        frame.getContentPane().add(contactController.getView("Show").getMainPanel(), BorderLayout.CENTER);
-        frame.getContentPane().add(buttons, BorderLayout.SOUTH);
+        frame.getContentPane().add(updateButton, BorderLayout.SOUTH);
 
         frame.pack();
         frame.revalidate();
@@ -75,27 +54,11 @@ public class iSoccer {
         frame.setVisible(true);
     }
 
-    private static Controller addressTest(){
-        Controller controller = new AddressDataController(new AddressData());
-        controller.addView("Edit", new AddressDataViewEdit(controller));
-        controller.addView("Show", new AddressDataViewShow(controller));
-
-        return controller;
+    public static void setView(Controller controller){
+        frame.getContentPane().setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.PAGE_AXIS));
+        for(View v : controller.getViews()){
+            frame.getContentPane().add(v.getMainPanel(), BorderLayout.NORTH);
+        }
     }
 
-    private static Controller personalTest(){
-        Controller controller = new PersonalDataController(new PersonalData());
-        controller.addView("Edit", new PersonalDataViewEdit(controller));
-        controller.addView("Show", new PersonalDataViewShow(controller));
-
-        return controller;
-    }
-
-    private static Controller contactTest(){
-        Controller controller = new ContactDataController(new ContactData());
-        controller.addView("Edit", new ContactDataViewEdit(controller));
-        controller.addView("Show", new ContactDataViewShow(controller));
-
-        return controller;
-    }
 }

@@ -22,6 +22,10 @@ public class Bundle {
         objects.put(key, value);
     }
 
+    public Object getObject(String key){
+        return objects.get(key);
+    }
+
     public Integer getInt(String key){
         return (Integer) objects.get(key);
     }

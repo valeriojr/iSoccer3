@@ -1,5 +1,6 @@
 package Data;
 
+import java.util.Collection;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -38,5 +39,9 @@ public abstract class Controller {
 
     public Bundle getBundle(){
         return bundle;
+    }
+
+    public Collection<View> getViews() {
+        return views.values();
     }
 }
