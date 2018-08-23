@@ -19,10 +19,12 @@ public class Bundle {
                 objects.remove(key);
             }
         }
+
         objects.put(key, value);
     }
 
     public Object getObject(String key){
+        System.out.println("Returning " + objects.get(key) + " with key " + key);
         return objects.get(key);
     }
 

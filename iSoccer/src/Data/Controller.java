@@ -1,25 +1,32 @@
 package Data;
 
+import Util.EmptyView;
+
 import java.util.Collection;
 import java.util.Map;
 import java.util.TreeMap;
 
 public abstract class Controller {
     private Model model;
-    private Map<String, View> views;
+    protected View view;
     protected Bundle bundle;
+
+    public Controller(Model model, View view) {
+        this.model = model;
+        this.view = view;
+        this.bundle = new Bundle();
+    }
 
     public Controller(Model model) {
         this.model = model;
-        this.views = new TreeMap<String, View>();
+        this.view = null;
         this.bundle = new Bundle();
+        setView(new EmptyView(this));
     }
 
     public abstract void updateModel();
 
     public void updateView(String viewName){
-        View view = getView(viewName);
-
         if(view != null){
             view.update();
         }
@@ -29,19 +36,15 @@ public abstract class Controller {
         return model;
     }
 
-    public void addView(String viewName, View view){
-        views.put(viewName, view);
+    public void setView(View view){
+        this.view = view;
     }
 
-    public View getView(String viewName){
-        return views.get(viewName);
+    public View getView(){
+        return view;
     }
 
     public Bundle getBundle(){
         return bundle;
-    }
-
-    public Collection<View> getViews() {
-        return views.values();
     }
 }

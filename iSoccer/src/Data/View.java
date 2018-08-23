@@ -12,6 +12,10 @@ public abstract class View {
         this.controller = controller;
     }
 
+    public void setController(Controller controller){
+        this.controller = controller;
+    }
+
     protected void initialize(){
         mainPanel = new JPanel();
     }

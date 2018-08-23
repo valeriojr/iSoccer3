@@ -3,13 +3,10 @@ package Data.PersonalData.Views;
 import Data.Bundle;
 import Data.Controller;
 import Data.PersonalData.PersonalData;
-import Data.PersonalData.PersonalDataController;
 import Data.View;
-import Person.Person;
 
 import javax.swing.*;
 import java.awt.*;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 

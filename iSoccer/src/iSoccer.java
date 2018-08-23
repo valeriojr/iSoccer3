@@ -1,21 +1,13 @@
-import Data.AddressData.*;
-import Data.AddressData.Views.*;
-import Data.ContactData.*;
-import Data.ContactData.Views.*;
 import Data.Controller;
-import Data.Model;
-import Data.PersonalData.*;
-import Data.PersonalData.Views.*;
-import Data.View;
-import Person.Person;
-import Person.PersonController;
+import Data.SupportData.SupportData;
+import UserTypes.Person.PersonController;
+import UserTypes.Supporter.Supporter;
+import UserTypes.Supporter.SupporterController;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.List;
 
 public class iSoccer {
     static JFrame frame;
@@ -23,22 +15,18 @@ public class iSoccer {
     public static void main(String args[]) {
         initializeFrame();
 
-        PersonController personController = new PersonController(new Person(null, null, null));
-
-        setView(personController);
+        Controller controller = new SupporterController(new Supporter());
 
         JButton updateButton = new JButton("Update");
         updateButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                for (View v : personController.getViews()) {
-                    v.update();
-                    personController.updateModel();
-                    v.clear();
-                }
-                System.out.print(personController.getModel());
+                controller.updateModel();
+                System.out.print(controller.getModel());
             }
         });
+
+        frame.getContentPane().add(controller.getView().getMainPanel());
 
         frame.getContentPane().add(updateButton, BorderLayout.SOUTH);
 
@@ -53,12 +41,4 @@ public class iSoccer {
         frame.setSize(400, 400);
         frame.setVisible(true);
     }
-
-    public static void setView(Controller controller){
-        frame.getContentPane().setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.PAGE_AXIS));
-        for(View v : controller.getViews()){
-            frame.getContentPane().add(v.getMainPanel(), BorderLayout.NORTH);
-        }
-    }
-
 }

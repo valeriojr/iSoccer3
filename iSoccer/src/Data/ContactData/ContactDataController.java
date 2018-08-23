@@ -11,6 +11,11 @@ public class ContactDataController extends Controller {
         super(model);
     }
 
+    public ContactDataController() {
+        super(new ContactData());
+        setView(new ContactDataViewEdit(this));
+    }
+
     @Override
     public void updateModel() {
         ContactData model = (ContactData) getModel();

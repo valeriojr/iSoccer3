@@ -1,11 +1,17 @@
 package Data.AddressData;
 
+import Data.AddressData.Views.AddressDataViewEdit;
 import Data.Controller;
 
 public class AddressDataController extends Controller {
 
     public AddressDataController(AddressData model){
         super(model);
+    }
+
+    public AddressDataController() {
+        super(new AddressData());
+        setView(new AddressDataViewEdit(this));
     }
 
     @Override

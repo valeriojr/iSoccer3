@@ -1,4 +1,4 @@
-package Person;
+package UserTypes.Person;
 
 import Data.AddressData.AddressData;
 import Data.ContactData.ContactData;
@@ -18,6 +18,12 @@ public class Person extends Model{
         this.contactData = contactData;
     }
 
+    public Person() {
+        this.personalData = null;
+        this.addressData = null;
+        this.contactData = null;
+    }
+
     @Override
     public String toString() {
         return personalData.toString() + addressData.toString() + contactData.toString();
@@ -33,5 +39,17 @@ public class Person extends Model{
 
     public void setContactData(ContactData contactData) {
         this.contactData = contactData;
+    }
+
+    public PersonalData getPersonalData() {
+        return personalData;
+    }
+
+    public AddressData getAddressData(){
+        return addressData;
+    }
+
+    public ContactData getContactData(){
+        return contactData;
     }
 }
