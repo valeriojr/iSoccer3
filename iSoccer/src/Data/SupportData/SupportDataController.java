@@ -21,9 +21,6 @@ public class SupportDataController extends Controller {
 
         SupportData.Type type = (SupportData.Type) getBundle().getObject(SupportData.TYPE);
 
-        if(type != null){
-            model.setType(type);
-            System.out.println("aqui");
-        }
+        model.setType(type);
     }
 }

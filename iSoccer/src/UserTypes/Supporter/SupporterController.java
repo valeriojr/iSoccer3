@@ -41,6 +41,6 @@ public class SupporterController extends Controller {
         Supporter model = (Supporter) getModel();
 
         model.setPerson((Person) person.getModel());
-        model.getSupportData().setType((SupportData.Type) bundle.getObject(SupportData.TYPE));
+        model.setSupportData((SupportData) supporter.getModel());
     }
 }

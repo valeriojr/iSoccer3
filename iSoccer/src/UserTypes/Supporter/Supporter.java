@@ -26,4 +26,8 @@ public class Supporter extends Person {
     public String toString() {
         return super.toString() + supportData.toString();
     }
+
+    public void setSupportData(SupportData model) {
+        supportData = model;
+    }
 }

@@ -20,6 +20,10 @@ public class SupportData extends Model {
 
     @Override
     public String toString() {
+        if(type == null){
+            System.out.println("Tipo: Null");
+            return "";
+        }
         return String.format("%s: %s", TYPE, type);
     }
 
