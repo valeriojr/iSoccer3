@@ -5,10 +5,6 @@ import MVC.Controller;
 
 public class AddressDataController extends Controller {
 
-    public AddressDataController(AddressData model){
-        super(model);
-    }
-
     public AddressDataController() {
         super(new AddressData());
         setView(new AddressDataViewEdit(this));
@@ -17,6 +13,10 @@ public class AddressDataController extends Controller {
     @Override
     public void updateModel() {
         AddressData model = (AddressData) getModel();
+
+        if(model == null){
+            model = new AddressData();
+        }
 
         model.setAddress(bundle.getString(AddressData.ADDRESS));
         model.setCity(bundle.getString(AddressData.CITY));

@@ -20,6 +20,7 @@ public abstract class View {
 
     protected void initialize(){
         mainPanel = new JPanel();
+        mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.PAGE_AXIS));
     }
 
     public abstract void update();

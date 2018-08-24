@@ -6,10 +6,6 @@ import MVC.Model;
 
 public class ContactDataController extends Controller {
 
-    public ContactDataController(Model model) {
-        super(model);
-    }
-
     public ContactDataController() {
         super(new ContactData());
         setView(new ContactDataViewEdit(this));

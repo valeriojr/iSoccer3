@@ -11,14 +11,15 @@ public class LoginView extends View {
 
     public LoginView(Controller controller) {
         super(controller);
+        initialize();
     }
 
     @Override
     protected void initialize() {
         super.initialize();
 
-        password = new JTextField();
-        username = new JTextField();
+        username = new JTextField(15);
+        password = new JPasswordField(15);
 
         username.setBorder(BorderFactory.createTitledBorder(Login.USERNAME));
         password.setBorder(BorderFactory.createTitledBorder(Login.PASSWORD));

@@ -1,9 +1,6 @@
-import Login.*;
+import Data.Resources.Buildings.StadiumData.StadiumDataController;
 import MVC.Controller;
-import MVC.Model;
 import MVC.View;
-import UserTypes.Supporter.Supporter;
-import UserTypes.Supporter.SupporterController;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,21 +13,17 @@ public class iSoccer {
     public static void main(String args[]) {
         initializeFrame();
 
-        Model model;
         View view;
         Controller controller;
 
-        model = new Login("username", "123456");
-        controller = new LoginController(model);
-        view = new LoginView(controller);
-        controller.setView(view);
+        controller = new StadiumDataController();
 
         JButton updateButton = new JButton("Update");
         updateButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 controller.updateModel();
-                System.out.print(controller.getModel());
+                System.out.println(controller.getModel());
             }
         });
 

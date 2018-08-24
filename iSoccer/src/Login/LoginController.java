@@ -18,6 +18,8 @@ public class LoginController extends Controller {
     public void updateModel() {
         Login model = (Login) getModel();
 
+        updateView();
+
         model.setUsername(bundle.getString(Login.USERNAME));
         model.setPassword(bundle.getString(Login.PASSWORD));
     }

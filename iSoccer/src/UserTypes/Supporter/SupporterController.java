@@ -12,8 +12,8 @@ import javax.swing.*;
 public class SupporterController extends Controller {
     private Controller person, supporter;
 
-    public SupporterController(Model model) {
-        super(model);
+    public SupporterController() {
+        super(new Supporter());
 
         person = new PersonController();
         supporter = new SupportDataController();
@@ -24,16 +24,14 @@ public class SupporterController extends Controller {
     void setupView(){
         JPanel panel = view.getMainPanel();
 
-        panel.setLayout(new BoxLayout(panel, BoxLayout.PAGE_AXIS));
-
         panel.add(person.getView().getMainPanel());
         panel.add(supporter.getView().getMainPanel());
     }
 
     @Override
     public void updateModel() {
-        person.getView().update();
-        supporter.getView().update();
+        person.updateView();
+        supporter.updateView();
 
         person.updateModel();
         supporter.updateModel();

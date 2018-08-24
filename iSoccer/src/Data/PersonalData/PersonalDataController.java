@@ -6,10 +6,6 @@ import Data.PersonalData.Views.PersonalDataViewEdit;
 
 public class PersonalDataController extends Controller {
 
-    public PersonalDataController(Model model) {
-        super(model);
-    }
-
     public PersonalDataController() {
         super(new PersonalData());
         setView(new PersonalDataViewEdit(this));

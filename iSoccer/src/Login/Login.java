@@ -23,4 +23,9 @@ public class Login implements Model {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s: %s\n%s: %s\n", USERNAME, username, PASSWORD, password);
+    }
 }
