@@ -1,10 +1,7 @@
-package Data;
+package MVC;
 
+import Util.Bundle;
 import Util.EmptyView;
-
-import java.util.Collection;
-import java.util.Map;
-import java.util.TreeMap;
 
 public abstract class Controller {
     private Model model;
@@ -26,7 +23,7 @@ public abstract class Controller {
 
     public abstract void updateModel();
 
-    public void updateView(String viewName){
+    public void updateView(){
         if(view != null){
             view.update();
         }
@@ -44,7 +41,7 @@ public abstract class Controller {
         return view;
     }
 
-    public Bundle getBundle(){
+    public Bundle getBundle() {
         return bundle;
     }
 }

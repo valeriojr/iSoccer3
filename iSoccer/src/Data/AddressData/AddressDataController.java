@@ -1,7 +1,7 @@
 package Data.AddressData;
 
 import Data.AddressData.Views.AddressDataViewEdit;
-import Data.Controller;
+import MVC.Controller;
 
 public class AddressDataController extends Controller {
 

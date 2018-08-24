@@ -1,10 +1,8 @@
 package Data.PersonalData;
 
-import Data.Controller;
-import Data.Model;
+import MVC.Controller;
+import MVC.Model;
 import Data.PersonalData.Views.PersonalDataViewEdit;
-
-import javax.swing.*;
 
 public class PersonalDataController extends Controller {
 

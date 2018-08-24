@@ -1,8 +1,8 @@
 package Data.AddressData;
 
-import Data.Model;
+import MVC.Model;
 
-public class AddressData extends Model {
+public class AddressData implements Model {
     public static final String ADDRESS = "Endereço", CITY = "Cidade", STATE = "Estado", COUNTRY = "País";
 
     private String address, city, state, country;

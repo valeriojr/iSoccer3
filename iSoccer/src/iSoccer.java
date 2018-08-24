@@ -1,6 +1,7 @@
-import Data.Controller;
-import Data.SupportData.SupportData;
-import UserTypes.Person.PersonController;
+import Login.*;
+import MVC.Controller;
+import MVC.Model;
+import MVC.View;
 import UserTypes.Supporter.Supporter;
 import UserTypes.Supporter.SupporterController;
 
@@ -15,7 +16,14 @@ public class iSoccer {
     public static void main(String args[]) {
         initializeFrame();
 
-        Controller controller = new SupporterController(new Supporter());
+        Model model;
+        View view;
+        Controller controller;
+
+        model = new Login("username", "123456");
+        controller = new LoginController(model);
+        view = new LoginView(controller);
+        controller.setView(view);
 
         JButton updateButton = new JButton("Update");
         updateButton.addActionListener(new ActionListener() {

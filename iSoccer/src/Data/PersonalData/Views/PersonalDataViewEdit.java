@@ -1,10 +1,10 @@
 package Data.PersonalData.Views;
 
 
-import Data.Bundle;
-import Data.Controller;
+import Util.Bundle;
+import MVC.Controller;
 import Data.PersonalData.PersonalData;
-import Data.View;
+import MVC.View;
 
 import javax.swing.*;
 import java.awt.*;

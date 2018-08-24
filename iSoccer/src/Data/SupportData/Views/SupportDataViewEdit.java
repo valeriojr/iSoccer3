@@ -1,15 +1,13 @@
 package Data.SupportData.Views;
 
-import Data.Bundle;
+import Util.Bundle;
 import Data.SupportData.SupportData;
 import Data.SupportData.SupportDataController;
-import Data.View;
+import MVC.View;
 
 import javax.swing.*;
 
 import java.awt.*;
-
-import static Data.SupportData.SupportData.Type.values;
 
 public class SupportDataViewEdit extends View {
 

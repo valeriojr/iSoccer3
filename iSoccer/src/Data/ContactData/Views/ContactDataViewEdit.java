@@ -1,14 +1,12 @@
 package Data.ContactData.Views;
 
-import Data.Bundle;
+import Util.Bundle;
 import Data.ContactData.ContactData;
-import Data.Controller;
-import Data.View;
+import MVC.Controller;
+import MVC.View;
 
 import javax.swing.*;
 import java.awt.*;
-
-import static Data.ContactData.ContactData.EMAIL;
 
 public class ContactDataViewEdit extends View {
     private JTextField email, phone;

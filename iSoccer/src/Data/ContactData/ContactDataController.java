@@ -1,9 +1,8 @@
 package Data.ContactData;
 
-import Data.Bundle;
 import Data.ContactData.Views.ContactDataViewEdit;
-import Data.Controller;
-import Data.Model;
+import MVC.Controller;
+import MVC.Model;
 
 public class ContactDataController extends Controller {
 

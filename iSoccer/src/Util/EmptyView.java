@@ -1,7 +1,7 @@
 package Util;
 
-import Data.Controller;
-import Data.View;
+import MVC.Controller;
+import MVC.View;
 
 public class EmptyView extends View {
     public EmptyView(Controller controller) {

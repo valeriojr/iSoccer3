@@ -1,11 +1,11 @@
 package Data.PersonalData;
 
-import Data.Model;
+import MVC.Model;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class PersonalData extends Model {
+public class PersonalData implements Model {
     public static final String NAME = "Nome", ID = "CPF", BIRTHDATE = "Data de nascimento"; 
     
     private String name, id;
@@ -15,14 +15,12 @@ public class PersonalData extends Model {
         this.name = null;
         this.id = null;
         this.birthdate = null;
-        setInitialized(false);
     }
 
     public PersonalData(String name, String id, Date birthdate){
         this.name = name;
         this.id = id;
         this.birthdate = birthdate;
-        setInitialized(true);
     }
 
     @Override

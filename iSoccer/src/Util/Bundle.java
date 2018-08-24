@@ -1,4 +1,4 @@
-package Data;
+package Util;
 
 import java.util.Date;
 import java.util.Map;
@@ -8,7 +8,7 @@ public class Bundle {
     private Map<String, Object> objects;
     private boolean overwrite;
 
-    Bundle(){
+    public Bundle(){
         objects = new TreeMap<String, Object>();
         overwrite = true;
     }

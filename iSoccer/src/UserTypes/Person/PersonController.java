@@ -4,8 +4,8 @@ import Data.AddressData.AddressData;
 import Data.AddressData.AddressDataController;
 import Data.ContactData.ContactData;
 import Data.ContactData.ContactDataController;
-import Data.Controller;
-import Data.Model;
+import MVC.Controller;
+import MVC.Model;
 import Data.PersonalData.PersonalData;
 import Data.PersonalData.PersonalDataController;
 
@@ -48,9 +48,9 @@ public class PersonController extends Controller{
 
     @Override
     public void updateModel() {
-        personal.getView().update();
-        address.getView().update();
-        contact.getView().update();
+        personal.updateView();
+        address.updateView();
+        contact.updateView();
 
         personal.updateModel();
         address.updateModel();

@@ -1,7 +1,7 @@
 package UserTypes.Supporter;
 
-import Data.Controller;
-import Data.Model;
+import MVC.Controller;
+import MVC.Model;
 import Data.SupportData.SupportData;
 import Data.SupportData.SupportDataController;
 import UserTypes.Person.Person;

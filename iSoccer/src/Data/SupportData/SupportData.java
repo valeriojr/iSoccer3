@@ -1,8 +1,8 @@
 package Data.SupportData;
 
-import Data.Model;
+import MVC.Model;
 
-public class SupportData extends Model {
+public class SupportData implements Model {
     public static final String TYPE = "Tipo de apoio";
     public static double[] pricing = {25.0, 35.0, 50.0};
 

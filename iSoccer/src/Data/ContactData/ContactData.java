@@ -1,8 +1,8 @@
 package Data.ContactData;
 
-import Data.Model;
+import MVC.Model;
 
-public class ContactData extends Model {
+public class ContactData implements Model {
     public static final String EMAIL = "Endereço de e-mail", PHONE = "Número de telefone";
 
     private String email, phone;

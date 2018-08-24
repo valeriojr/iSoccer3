@@ -1,7 +1,7 @@
 package Data.SupportData;
 
-import Data.Controller;
-import Data.Model;
+import MVC.Controller;
+import MVC.Model;
 import Data.SupportData.Views.SupportDataViewEdit;
 
 public class SupportDataController extends Controller {
@@ -17,10 +17,6 @@ public class SupportDataController extends Controller {
 
     @Override
     public void updateModel() {
-        SupportData model = (SupportData) getModel();
-
-        SupportData.Type type = (SupportData.Type) getBundle().getObject(SupportData.TYPE);
-
-        model.setType(type);
+        ((SupportData) getModel()).setType((SupportData.Type) bundle.getObject(SupportData.TYPE));
     }
 }

@@ -1,9 +1,9 @@
 package Data.AddressData.Views;
 
 import Data.AddressData.AddressData;
-import Data.Bundle;
-import Data.Controller;
-import Data.View;
+import Util.Bundle;
+import MVC.Controller;
+import MVC.View;
 
 import javax.swing.*;
 import java.awt.*;

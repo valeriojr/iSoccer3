@@ -1,4 +1,6 @@
-package Data;
+package MVC;
+
+import MVC.Controller;
 
 import javax.swing.*;
 

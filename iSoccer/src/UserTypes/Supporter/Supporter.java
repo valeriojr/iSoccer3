@@ -1,6 +1,5 @@
 package UserTypes.Supporter;
 
-import Data.Model;
 import Data.SupportData.SupportData;
 import UserTypes.Person.Person;
 
