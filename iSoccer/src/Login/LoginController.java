@@ -10,8 +10,9 @@ public class LoginController extends Controller {
         super(model, view);
     }
 
-    public LoginController(Model model) {
-        super(model);
+    public LoginController() {
+        super(new Login());
+        setView(new LoginView(this));
     }
 
     @Override

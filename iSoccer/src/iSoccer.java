@@ -5,6 +5,8 @@ import Data.Resources.Buildings.TrainingCenterData.TrainingCenterData;
 import Data.Resources.Buildings.TrainingCenterData.TrainingCenterDataController;
 import Data.Resources.VehicleData.VehicleData;
 import Data.Resources.VehicleData.VehicleDataController;
+import Login.Login;
+import Login.LoginController;
 import MVC.Controller;
 import Reports.*;
 import UserTypes.Employee.Employee;
@@ -32,15 +34,40 @@ public class iSoccer {
     private static List<TrainingCenterData> trainingCenters;
     private static JComboBox<String> actionSelect;
 
-    public static void main(String args[]) {
+    public static void main(String args[]){
+        final Controller[] controller = {new LoginController()};
+
+        JDialog loginDialog = new JDialog();
+        loginDialog.add(controller[0].getView().getMainPanel());
+        JButton login = new JButton("Entrar");
+        login.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                controller[0].updateView();
+                controller[0].updateModel();
+                if(((Login) controller[0].getModel()).authenticate()){
+                    loginDialog.dispose();
+                    iSoccerMain();
+                }
+            }
+        });
+        loginDialog.add(login, BorderLayout.SOUTH);
+        loginDialog.setModal(true);
+        loginDialog.pack();
+        loginDialog.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        loginDialog.setVisible(true);
+    }
+
+    public static void iSoccerMain() {
         initializeFrame();
+
         employees = new TreeMap<>();
         supporters = new TreeMap<>();
         vehicles = new ArrayList<>();
         stadiums = new ArrayList<>();
         trainingCenters = new ArrayList<>();
 
-        final Controller[] controller = {new SupporterController()};
+        final Controller[] controller = {new LoginController()};
 
         JPanel info = new JPanel();
         JPanel buttons = new JPanel();
