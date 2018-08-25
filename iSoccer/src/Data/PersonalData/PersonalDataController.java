@@ -19,4 +19,10 @@ public class PersonalDataController extends Controller {
         model.setId(bundle.getString(PersonalData.ID));
         model.setBirthdate(bundle.getDate(PersonalData.BIRTHDATE));
     }
+
+    @Override
+    public void resetModel() {
+        model = new PersonalData();
+        view.clear();
+    }
 }

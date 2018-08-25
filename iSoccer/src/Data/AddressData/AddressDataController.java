@@ -23,4 +23,9 @@ public class AddressDataController extends Controller {
         model.setState(bundle.getString(AddressData.STATE));
         model.setCountry(bundle.getString(AddressData.COUNTRY));
     }
+
+    @Override
+    public void resetModel() {
+        model = new AddressData();
+    }
 }

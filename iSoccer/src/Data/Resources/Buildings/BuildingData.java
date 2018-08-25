@@ -26,4 +26,17 @@ public class BuildingData implements Model {
     public String toString() {
         return String.format("%s: %s\n", NAME, name) + address.toString();
     }
+
+    public void setBuildingData(BuildingData model) {
+        this.name = model.name;
+        this.address = model.address;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public AddressData getAddress() {
+        return address;
+    }
 }

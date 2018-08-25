@@ -30,4 +30,9 @@ public class BuildingDataController extends Controller {
         model.setName(bundle.getString(BuildingData.NAME));
         model.setAddress((AddressData) address.getModel());
     }
+
+    @Override
+    public void resetModel() {
+        model = new BuildingData();
+    }
 }

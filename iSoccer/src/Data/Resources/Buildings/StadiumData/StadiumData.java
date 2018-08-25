@@ -7,18 +7,12 @@ public class StadiumData extends BuildingData {
     public static final String CAPACITY = "Capacidade",
             BATHROOMS = "Quantidade de banheiros", SNACK_BARS = "Quantidade de lanchonetes";
 
-    private BuildingData buildingData;
     private int capacity, bathrooms, snackBars;
 
     public StadiumData(){
-        this.buildingData = null;
         this.capacity = 0;
         this.bathrooms = 0;
         this.snackBars = 0;
-    }
-
-    public void setBuildingData(BuildingData buildingData) {
-        this.buildingData = buildingData;
     }
 
     public void setCapacity(int capacity) {
@@ -35,7 +29,19 @@ public class StadiumData extends BuildingData {
 
     @Override
     public String toString() {
-        return buildingData.toString() + String.format("%s: %d\n%s: %d\n%s: %d\n", CAPACITY, capacity, BATHROOMS,
+        return super.toString() + String.format("%s: %d\n%s: %d\n%s: %d\n", CAPACITY, capacity, BATHROOMS,
                 bathrooms, SNACK_BARS, snackBars);
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public int getBathrooms() {
+        return bathrooms;
+    }
+
+    public int getSnackBars() {
+        return snackBars;
     }
 }

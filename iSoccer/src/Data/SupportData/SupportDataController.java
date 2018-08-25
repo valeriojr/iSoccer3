@@ -3,6 +3,7 @@ package Data.SupportData;
 import MVC.Controller;
 import MVC.Model;
 import Data.SupportData.Views.SupportDataViewEdit;
+import UserTypes.Supporter.Supporter;
 
 public class SupportDataController extends Controller {
 
@@ -18,5 +19,10 @@ public class SupportDataController extends Controller {
     @Override
     public void updateModel() {
         ((SupportData) getModel()).setType((SupportData.Type) bundle.getObject(SupportData.TYPE));
+    }
+
+    @Override
+    public void resetModel() {
+        model = new SupportData();
     }
 }

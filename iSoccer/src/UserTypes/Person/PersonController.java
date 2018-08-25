@@ -66,4 +66,20 @@ public class PersonController extends Controller{
         model.setAddressData((AddressData) address.getModel());
         model.setContactData((ContactData) contact.getModel());
     }
+
+    @Override
+    public void resetModel() {
+        model = new Person();
+        personal.resetModel();
+        address.resetModel();
+        contact.resetModel();
+        clearView();
+    }
+
+    @Override
+    public void clearView() {
+        personal.clearView();
+        address.clearView();
+        contact.clearView();
+    }
 }

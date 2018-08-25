@@ -9,13 +9,11 @@ public class SupportData implements Model {
     public enum Type {JÚNIOR, SÊNIOR, ELITE}
 
     private Type type;
-
-    public SupportData(Type type){
-        this.type = type;
-    }
+    private boolean situation;
 
     public SupportData() {
         type = Type.JÚNIOR;
+        situation = true;
     }
 
     @Override
@@ -29,5 +27,21 @@ public class SupportData implements Model {
 
     public void setType(Type type) {
         this.type = type;
+    }
+
+    public Type getType() {
+        return type;
+    }
+
+    public double getPricing(){
+        return pricing[type.ordinal()];
+    }
+
+    public boolean getSituation(){
+        return situation;
+    }
+
+    public void setSituation(boolean situation) {
+        this.situation = situation;
     }
 }

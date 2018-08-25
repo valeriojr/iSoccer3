@@ -5,9 +5,6 @@ import Data.Resources.Buildings.BuildingDataController;
 import MVC.Controller;
 import MVC.View;
 
-import javax.swing.*;
-import java.awt.*;
-
 public class StadiumDataController extends Controller {
     private BuildingDataController building;
     private View stadiumView;
@@ -35,5 +32,10 @@ public class StadiumDataController extends Controller {
         stadium.setCapacity(bundle.getInt(StadiumData.CAPACITY));
         stadium.setBathrooms(bundle.getInt(StadiumData.BATHROOMS));
         stadium.setSnackBars(bundle.getInt(StadiumData.SNACK_BARS));
+    }
+
+    @Override
+    public void resetModel() {
+        model = new StadiumData();
     }
 }

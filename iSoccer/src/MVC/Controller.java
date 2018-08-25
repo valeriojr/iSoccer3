@@ -4,7 +4,7 @@ import Util.Bundle;
 import Util.EmptyView;
 
 public abstract class Controller {
-    private Model model;
+    protected Model model;
     protected View view;
     protected Bundle bundle;
 
@@ -28,6 +28,11 @@ public abstract class Controller {
             view.update();
         }
     }
+
+    public void clearView(){
+    }
+
+    public abstract void resetModel();
 
     public Model getModel(){
         return model;

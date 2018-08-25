@@ -24,5 +24,10 @@ public class LoginController extends Controller {
         model.setPassword(bundle.getString(Login.PASSWORD));
     }
 
+    @Override
+    public void resetModel() {
+        model = new Login();
+    }
+
 
 }

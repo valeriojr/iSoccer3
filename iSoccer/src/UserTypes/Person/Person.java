@@ -2,12 +2,10 @@ package UserTypes.Person;
 
 import Data.AddressData.AddressData;
 import Data.ContactData.ContactData;
-import MVC.Model;
 import Data.PersonalData.PersonalData;
+import MVC.Model;
 
 public class Person implements Model{
-    public static final String PERSONAL_DATA = "Dados pessoais", ADDRESS_DATA = "Endereço", CONTACT_DATA = "Contato";
-
     private PersonalData personalData;
     private AddressData addressData;
     private ContactData contactData;

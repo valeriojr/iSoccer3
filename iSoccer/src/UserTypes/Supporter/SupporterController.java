@@ -29,6 +29,19 @@ public class SupporterController extends Controller {
     }
 
     @Override
+    public void clearView() {
+        person.getView().clear();
+        supporter.getView().clear();
+    }
+
+    @Override
+    public void resetModel() {
+        model = new Supporter();
+        person.resetModel();
+        supporter.resetModel();
+    }
+
+    @Override
     public void updateModel() {
         person.updateView();
         supporter.updateView();

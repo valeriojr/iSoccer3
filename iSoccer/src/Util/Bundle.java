@@ -47,4 +47,8 @@ public class Bundle {
     public void setOverwrite(boolean overwrite){
         this.overwrite = overwrite;
     }
+
+    public Double getDouble(String key) {
+        return (Double) objects.get(key);
+    }
 }

@@ -18,4 +18,9 @@ public class ContactDataController extends Controller {
         model.setEmail(bundle.getString(ContactData.EMAIL));
         model.setPhone(bundle.getString(ContactData.PHONE));
     }
+
+    @Override
+    public void resetModel() {
+        model = new ContactData();
+    }
 }

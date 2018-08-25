@@ -7,6 +7,11 @@ public class Login implements Model {
 
     private String username, password;
 
+    public Login(){
+        username = null;
+        password = null;
+    }
+
     public Login(String username, String password){
         this.username = username;
         this.password = password;
